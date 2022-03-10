@@ -1,5 +1,13 @@
 #include <stdio.h>
 
+/**
+* main - prints a string of char
+*
+* Description: Use printf to print a sting of char.
+*
+* Return: Always return 0 (Success)
+*/
+
 int main(void)
 	{
 
