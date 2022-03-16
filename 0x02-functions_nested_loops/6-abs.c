@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 
 /**
  * _abs - determine the absolute value of an integer
@@ -8,7 +8,8 @@
 
 int _abs(int i)
 {
-if (i < 0)
-i *= -1;
-return (i);
+	if (i < 0)
+		i *= -1;
+	
+	return (i);
 }
