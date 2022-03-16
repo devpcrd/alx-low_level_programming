@@ -5,9 +5,10 @@
  * main - print _putchar()
  * Return: 0 if succesful
  */
+
 int main(void)
 {
-  char *s= "_putchar";
+	char *s = "_putchar";
 
 	while (*s != '\0')
 	{
