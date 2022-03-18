@@ -1,22 +1,21 @@
 #include "main.h"
 
 /**
- * more_numbers - check the code.
- *
- * Return: Always 0.
+ * more_numbers - print all numbers 0 through 14 ten tiems
  */
+
 void more_numbers(void)
 {
-	int c, j;
-
-	for (c = 1; c <= 10; c++)
-	{
-		for (j = 0; j <= 14; j++)
-		{
-			if (i > 9)
-				_putchar((i / 10) + '0');
-			_putchar((i % 10) + '0');
-		}
-		_putchar('\n');
-	}
+int i;
+int x;
+for (x = 0; x < 10; x++)
+{
+for (i = 0; i <= 14; i++)
+{
+if (i > 9)
+_putchar((i / 10) + '0');
+_putchar((i % 10) + '0');
+}
+_putchar('\n');
+}
 }
