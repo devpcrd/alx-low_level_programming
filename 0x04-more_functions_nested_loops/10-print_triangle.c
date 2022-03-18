@@ -1,4 +1,4 @@
-#include "mainn.h"
+#include "main.h"
 
 /**
  * print_triangle - print backwards triangle of n size
