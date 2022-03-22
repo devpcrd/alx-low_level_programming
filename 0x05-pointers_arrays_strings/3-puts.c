@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * puts - reset using pointer
+ * _puts - reset using pointer
  *
  * @str: int s
  *
