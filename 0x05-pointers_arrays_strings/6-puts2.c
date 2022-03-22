@@ -1,20 +1,20 @@
-#include "main.h"
-
+#include "holberton.h"
 /**
- * puts - prints
+ * puts2 - prints every other character
  * @str: string
- * Return: void
  */
 
 void puts2(char *str)
 {
-	int i = 0;
+	int i;
+
+	i = 0;
 
 	while (str[i] != '\0')
 	{
-		_putchar(str[i])
-		i = i + 2;
+		if (i % 2 == 0)
+			_putchar(str[i]);
+		i++;
 	}
-	_putchar('\n')
-
+	_putchar('\n');
 }

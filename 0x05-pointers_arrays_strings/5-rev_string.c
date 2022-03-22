@@ -1,27 +1,25 @@
-#include "main.h"
+#include "holberton.h"
 
 /**
- * rev string - prints reversed string, followed by a new line
- * @s: pointer to the string to print
- * Return: void
+ * rev_string - print a string in reverse followed by a new line
+ * @s: string to be reversed
  */
 
 void rev_string(char *s)
 {
-int i;
-char can;
-char tmp;
+	int len, count, end;
+	char beg;
 
-int l = strlen(str):
-can = *str;
-int lind, rind;
-lind= 0;
-rind = l - 1;
+	len = 0;
 
-for (i = lind; i < rind; i++) {
-tmp = str[i];
-str[i] = str[rind];
-str[rind] = tmp;
-rind--;
-_putchar('\n');
+	while (s[len] != '\0')
+		len++;
+	len--;
+	for (count = 0; count <= len / 2; count++)
+	{
+		beg = s[count];
+		end = s[len - count];
+		s[count] = end;
+		s[len - count] = beg;
+	}
 }
