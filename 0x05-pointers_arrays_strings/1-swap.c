@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 
 /**
  * swap_int - swap to value pointers
@@ -8,9 +8,9 @@
 
 void swap_int(int *a, int *b)
 {
-	int temp;
+	int c;
 
-	temp = *a;
+	c = *a;
 	*a = *b;
 	*b = temp;
 }
