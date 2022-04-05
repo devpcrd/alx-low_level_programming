@@ -1,54 +1,41 @@
-#include "main.h"
+#include "holberton.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-
 /**
- * _strlen - get length
- * @c: string
- * Return: returns length
- */
-
-int _strlen(char *c)
-{
-	int len;
-
-	for (len = 0; c[len] != '\0'; len++)
-		;
-
-	return (len);
-}
-
-/**
- * argstostr - concat str
- * @ac: number of args
- * @av: args
- * Return: returns a pointer to the two strings concatenated, or NULL if fails
+ * argstostr - concatenates all arguments of a program
+ * @ac: first parameter integer
+ * @av: second parameter pointer to a pointer
+ * Return: NULL if ac=0 or av=NULL
  */
 
 char *argstostr(int ac, char **av)
 {
-	char *ptr;
-	int x, y, len = 0, c;
+	int a, b, c = 0;
+	int len = 1;
+	char *str;
 
 	if (ac == 0 || av == NULL)
 		return (NULL);
-
-	for (x = 0; x < ac; x++)
-		len += _strlen(av[x]);
-
-	ptr = malloc((len + ac + 1) * sizeof(char));
-
-	if (!ptr)
-		return (NULL);
-
-	for (x = 0; x < ac; x++)
+	for (a = 0; a < ac; a++)
 	{
-		for (y = 0; av[x][y] != '\0'; y++, c++)
-			ptr[c] = av[x][y];
-		ptr[c] = '\n';
+		for (b = 0; av[a][b] != '\0'; b++)
+			len += 1;
+		len += 1;
+	}
+	str = malloc(sizeof(char) * len);
+	for (a = 0; a < ac; a++)
+	{
+		for (b = 0; av[a][b] != '\0'; b++)
+		{
+			str[c] = av[a][b];
+			c++;
+		}
+		str[c] = '\n';
 		c++;
 	}
-	ptr[c] = '\0';
-	return (ptr);
+	str[c] = '\0';
+	if (str != NULL)
+		return (str);
+	else
+		return (NULL);
 }
