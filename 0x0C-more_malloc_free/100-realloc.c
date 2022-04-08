@@ -10,8 +10,6 @@
  * Return: new void pointer or NULL if it fails
  */
 
-
-
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
 	char *clone, *relloc;
