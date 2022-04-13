@@ -1,6 +1,45 @@
 #include "dog.h"
 #include <stdio.h>
 #include <stdlib.h>
+
+/**
+ * _strlen - determinates the lenght of a string
+ * @s: pointer to string
+ * Return: the length
+ */
+int _strlen(char *s)
+{
+	int a;
+	int len;
+
+	for (a = 0; s[a] != '\0'; a++)
+	{
+		len++;
+	}
+	return (a);
+}
+/**
+ * _strcpy - copies a pointed string
+ * @dest: pointer to the destine string
+ * @src: pointer to the source string
+ * Return: the adress of the destiny string
+ */
+char *_strcpy(char *dest, char *src)
+{
+	int a;
+
+	a = 0;
+
+	while (src[a] != '\0')
+	{
+		dest[a] = src[a];
+		a++;
+	}
+
+	dest[a] = '\0';
+	return (dest);
+}
+
 /**
  * new_dog - create new data structure for dog
  * @name: name of dog
@@ -41,41 +80,4 @@ dog_t *new_dog(char *name, float age, char *owner)
 	new_dog->age = age;
 	new_dog->owner = cpowner;
 	return (new_dog);
-}
-/**
- * _strlen - determinates the lenght of a string
- * @s: pointer to string
- * Return: the length
- */
-int _strlen(char *s)
-{
-	int a;
-	int len;
-
-	for (a = 0; s[a] != '\0'; a++)
-	{
-		len++;
-	}
-	return (a);
-}
-/**
- * _strcpy - copies a pointed string
- * @dest: pointer to the destine string
- * @src: pointer to the source string
- * Return: the adress of the destiny string
- */
-char *_strcpy(char *dest, char *src)
-{
-	int a;
-
-	a = 0;
-
-	while (src[a] != '\0')
-	{
-		dest[a] = src[a];
-		a++;
-	}
-
-	dest[a] = '\0';
-	return (dest);
 }
