@@ -1,10 +1,9 @@
 #include "lists.h"
 
 /**
- * print_list - prints all elements of a list of type list_t
- * @h: pointer to first elememt of a list of type list_t
- *
- * Return: no of nodes
+ *print_list - prints all the elements of a list
+ *@h: pointer to the first element
+ *Return: number of nodes
  */
 
 size_t print_list(const list_t *h)
