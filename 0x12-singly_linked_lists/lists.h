@@ -1,28 +1,25 @@
 #ifndef LISTS_H
 #define LISTS_H
-#include <stdio.h>
-#include <string.h>
-#include<stdlib.h>
-
+#include <stdlib.h>
 /**
- *struct list_s - singly linked list
- *@str: string - placed in memory
- *@len: length of the string
- *@next: next point in the node
- *Description: singly linked list structure
- *for Holberton project
+ * struct list_s - singly linked list
+ * @str: string - (malloc'ed string)
+ * @len: length of the string
+ * @next: points to the next node
+ *
+ * Description: singly lnked list node structure
  */
 typedef struct list_s
 {
-  char *str;
-  unsigned int len;
-  struct list_s *next;
-}list_t;
-void liebre_tortuga(void) __attribute__ ((constructor));
-list_t *add_node(list_t **head, const char *str);
-void free_list(list_t *head);
-list_t *add_node_end(list_t **head, const char *str);
-int _strlen(const char *s);
-size_t list_len(const list_t *h);
+	char *str;
+	unsigned int len;
+	struct list_s *next;
+} list_t;
+
 size_t print_list(const list_t *h);
-#endif
+size_t list_len(const list_t *h);
+list_t *add_node(list_t **head, const char *str);
+list_t *add_node_end(list_t **head, const char *str);
+void free_list(list_t *head);
+
+#endif /* LISTS_H */
