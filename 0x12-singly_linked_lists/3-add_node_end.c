@@ -1,53 +1,55 @@
 #include "lists.h"
+#include <string.h>
 
 /**
- *add_node_end - adds a new node to the end
- *of a list_t
- *@head: pointer to the start of the list
- *@str: string to be copied
+ * add_node_end - Adds a new node at the end
+ *                of a list_t list.
+ * @head: A pointer the head of the list_t list.
+ * @str: The string to be added to the list_t list.
  *
- *Return: Pointer to new node, NULL
- *if it fails
+ * Return: If the function fails - NULL.
+ *         Otherwise - the address of the new element.
  */
 list_t *add_node_end(list_t **head, const char *str)
 {
-	list_t *temp, *new;
+	char *duplicate;
+	unsigned int i;
+	list_t *new, *last;
 
-	temp = *head;
+	duplicate = strdup(str);
+
 	new = malloc(sizeof(list_t));
-
 	if (new == NULL)
 		return (NULL);
-	new->str = strdup(str);
-	new->len = _strlen(str);
+
+	if (str == NULL)
+	{
+		free(new);
+		return (NULL);
+	}
+
+	i = 0;
+
+	while (str[i] != '\0')
+		i++;
+
+	new->str = duplicate;
+	new->len = i;
 	new->next = NULL;
+
 	if (*head == NULL)
 	{
 		*head = new;
-		return (*head);
 	}
-	while (temp->next)
+	else
 	{
-		temp = temp->next;
+		last = *head;
+
+		while (last->next != NULL)
+			last = last->next;
+
+		last->next = new;
 	}
-	temp->next = new;
+
 	return (*head);
-}
-
-
-/**
- *_strlen - returns the length ofa string
- *@s: pointer to a string
- *Return: string length
- */
-int _strlen(const char *s)
-{
-	int a;
-	int len;
-
-	for (a = 0; s[a] != '\0'; a++)
-	{
-		len++;
-	}
-	return (a);
 }
