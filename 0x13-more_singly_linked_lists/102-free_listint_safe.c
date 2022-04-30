@@ -8,8 +8,8 @@
 size_t free_listint_safe(listint_t **h)
 {
 	size_t counter = 0;
-	listint_t *safe_node = *h;
-	listint_t *tmp_node;
+	listint_t **safe_node = **h;
+	listint_t **tmp_node;
 
 	if (!h)
 		return (0);
@@ -23,6 +23,6 @@ size_t free_listint_safe(listint_t **h)
 		if (tmp_node < safe_node)
 			break;
 	}
-	*h = NULL;
+	**h = NULL;
 	return (counter);
 }
